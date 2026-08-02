@@ -156,8 +156,8 @@
                         <i class="fa-solid fa-circle-play text-base text-red-500"></i> Video Recordings
                     </button>
                 </div>
-                <!-- Admin Portal Button -->
-                <button onclick="openAdminModal()" class="ml-4 px-3.5 py-2 bg-slate-800 hover:bg-slate-900 text-white rounded-xl text-xs font-semibold flex items-center gap-2 transition flex-shrink-0">
+                <!-- Admin Portal Button (Hidden from View - Triggered via '9999') -->
+                <button onclick="openAdminModal()" class="hidden ml-4 px-3.5 py-2 bg-slate-800 hover:bg-slate-900 text-white rounded-xl text-xs font-semibold flex items-center gap-2 transition flex-shrink-0">
                     <i class="fa-solid fa-user-gear"></i> Admin Portal
                 </button>
             </div>
@@ -234,7 +234,7 @@
                         <select id="student-branch" onchange="saveStudentProfile()" class="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl text-xs focus:ring-2 focus:ring-jce-blue focus:outline-none bg-white">
                             <option value="">Select Department</option>
                             <option value="Computer Science (CSE)">Computer Science (CSE)</option>
-                            <option value="AI & Data Science (AI&DS)">AI & Data Science (AI&DS)</option>
+                            <option value="Artificial Intelligence Machine Learning (AIML)">Artificial Intelligence Machine Learning (AIML)</option>
                             <option value="Electronics & Comm. (ECE)">Electronics & Comm. (ECE)</option>
                             <option value="Electrical & Electronics (EEE)">Electrical & Electronics (EEE)</option>
                             <option value="Mechanical Engg. (ME)">Mechanical Engg. (ME)</option>
@@ -436,7 +436,7 @@
                         <select id="leaderboard-branch-filter" onchange="renderLeaderboard()" class="px-3.5 py-2 border border-slate-300 rounded-xl text-xs font-semibold text-slate-700 bg-white focus:outline-none">
                             <option value="ALL">All Departments</option>
                             <option value="Computer Science (CSE)">CSE</option>
-                            <option value="AI & Data Science (AI&DS)">AI&DS</option>
+                            <option value="Artificial Intelligence Machine Learning (AIML)">AIML</option>
                             <option value="Electronics & Comm. (ECE)">ECE</option>
                             <option value="Electrical & Electronics (EEE)">EEE</option>
                             <option value="Mechanical Engg. (ME)">ME</option>
@@ -533,9 +533,9 @@
                     <i class="fa-solid fa-lock"></i>
                 </div>
                 <h4 class="text-xl font-bold text-slate-900">Protected Area</h4>
-                <p class="text-xs text-slate-500">Please enter the coordinator access password to edit session details, Meet links, or clear submissions.</p>
+                <p class="text-xs text-slate-500">Please enter the coordinator access password to edit session details, Meet links, resource person photos, or clear submissions.</p>
                 <div class="space-y-3">
-                    <input type="password" id="admin-password-input" placeholder="Enter Coordinator Passcode" class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-xs text-center focus:ring-2 focus:ring-jce-blue focus:outline-none font-bold">
+                    <input type="password" id="admin-password-input" placeholder="Enter Passcode (shiva2026)" class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-xs text-center focus:ring-2 focus:ring-jce-blue focus:outline-none font-bold">
                     <button onclick="authenticateAdmin()" class="w-full py-2.5 bg-jce-blue hover:bg-blue-800 text-white font-bold rounded-xl text-xs transition">
                         Unlock Coordinator Panel
                     </button>
@@ -546,12 +546,12 @@
             <!-- Admin Editor Panel Content -->
             <div id="admin-panel-content" class="hidden p-6 space-y-6">
                 <div class="bg-amber-50 border border-amber-200 p-4 rounded-2xl text-xs text-amber-900 space-y-1">
-                    <p class="font-bold flex items-center gap-2"><i class="fa-solid fa-circle-info"></i> Instructions for Coordinator:</p>
+                    <p class="font-bold flex items-center gap-2"><i class="fa-solid fa-circle-info"></i> Option 1: Passport Photo Upload & Single-File Export Instructions:</p>
+                    <p>• <strong>Upload Passport Photo:</strong> Click <strong class="bg-blue-100 text-jce-blue px-1 rounded"><i class="fa-solid fa-upload"></i> Upload</strong> to select a photo from your computer. It converts automatically into a Base64 text URI so it stays permanently inside your single HTML file!</p>
                     <p>• <strong>Edit Day & Date:</strong> Modify Day #, Day of Week, and Date via dedicated inputs on each session card.</p>
                     <p>• <strong>Glow Override:</strong> Click <strong class="bg-amber-200 text-amber-900 px-1 rounded"><i class="fa-solid fa-sun"></i> Set as Today's Glow</strong> to force live golden highlight on any card.</p>
                     <p>• <strong>Split Sessions:</strong> Click <strong class="bg-amber-200 text-amber-900 px-1 rounded">Split (45m + 45m)</strong> to divide a 90-minute session into two 45-minute sub-sessions.</p>
-                    <p>• <strong>Delete Sessions:</strong> Click <strong class="bg-red-200 text-red-900 px-1 rounded">Delete</strong> to remove a session or sub-session from any day.</p>
-                    <p>• <strong>Publish for All Users:</strong> Click <strong class="bg-amber-300 text-amber-950 px-1 rounded"><i class="fa-solid fa-file-code"></i> Export Updated HTML</strong> to download the new index.html file, then upload it to your GitHub repository!</p>
+                    <p>• <strong>Publish to GitHub:</strong> Click <strong class="bg-amber-300 text-amber-950 px-1 rounded"><i class="fa-solid fa-file-code"></i> Export Updated HTML</strong> to download your updated `index.html` file with embedded Base64 photos, then upload it straight to GitHub!</p>
                 </div>
 
                 <div class="flex flex-wrap gap-3 justify-between items-center bg-slate-50 p-4 rounded-2xl border border-slate-200">
@@ -612,7 +612,6 @@
     <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 max-w-sm w-full pointer-events-none"></div>
 
     <script>
-        // Exact custom schedule with corrected week tags (week1 for Aug 4-8, week2 for Aug 10-14)
         const defaultSchedule = [
             {
                 "dayNum": 1,
@@ -622,6 +621,7 @@
                 "timeSlot": "10:00 AM - 10:45 AM (Part 1)",
                 "topic": "Welcome to Engineering Excellence : Orientation Inauguration and Academic Vision — Part I",
                 "speaker": "Dr. J. Shivakumar, Principal & Director, JCE-Belagavi",
+                "photoUrl": "",
                 "description": "Additional interactive session added by coordinator. (First 45-min segment)",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -634,6 +634,7 @@
                 "timeSlot": "11:00 AM - 11:30 AM",
                 "topic": "Engineering College Culture",
                 "speaker": "Dr. Rajashekargouda C. Patil, Dean Academics, JCE-Belagavi",
+                "photoUrl": "",
                 "description": "Additional interactive session added by coordinator. (Second 45-min segment)",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -646,6 +647,7 @@
                 "timeSlot": "10:30 AM - 11:30 AM",
                 "topic": "Student Engagement Cell at JCE :The Spectrum Council",
                 "speaker": "Dr. Varsha Gokak, Asst. Professor, Civil Engg., JCE-Belagavi",
+                "photoUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -658,6 +660,7 @@
                 "timeSlot": "10:30 AM - 11:30 AM",
                 "topic": "Energy Literacy Cell: Fueling Awareness, Saving Nature",
                 "speaker": "Prof. Yogish Chavadi, Asst. Prof. EEE Dept. JCE-Belagavi",
+                "photoUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -670,6 +673,7 @@
                 "timeSlot": "10:30 AM - 11:30 AM",
                 "topic": "Yuva AI for All: Ethical AI use for study, work, and everyday life",
                 "speaker": "Dr. Shivkumar Math, Professor & HOD, Physics, JCE-Belagavi",
+                "photoUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -682,6 +686,7 @@
                 "timeSlot": "10:30 AM - 11:30 AM",
                 "topic": "NISM:Financial literacy Course for Bharat",
                 "speaker": "Dr. S.RohitRaj Professor & HOD, MBA-Dept, JCE-Belagavi",
+                "photoUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -694,6 +699,7 @@
                 "timeSlot": "10:30 AM - 11:30 AM",
                 "topic": "Know Your Department: Computer Science Engineering (CSE)",
                 "speaker": "Dr. Uttam Patil, Professor & HOD - Computer Science Engg. JCE-Belagavi",
+                "photoUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -706,6 +712,7 @@
                 "timeSlot": "10:30 AM - 11:30 AM",
                 "topic": "Know Your Department: Artificial Intelligence & Machine Learning (AIML)",
                 "speaker": "Dr. Sachinkumar. Professor & HOD, AIML, JCE-Belagavi",
+                "photoUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -718,6 +725,7 @@
                 "timeSlot": "10:45 AM - 11:30 AM",
                 "topic": "Know Your Department: Electronics & Communication Engineering (ECE)",
                 "speaker": "Dr. Vinayakumar R. Bagali. Professor & HOD, ECE, JCE-Belagavi",
+                "photoUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -730,6 +738,7 @@
                 "timeSlot": "10:45 AM - 11:30 AM",
                 "topic": "Know Your Department: Electronics & Electrical Engineering (EEE)",
                 "speaker": "Dr. Mallikarjuna G. D., Associate Professor & HOD, EEE-Belagavi",
+                "photoUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -742,6 +751,7 @@
                 "timeSlot": "11:00 AM - 11:30 AM",
                 "topic": "Know Your Department: Civil Engineering",
                 "speaker": "Dr. Mithun B.M. Professor & HOD, Civil Engg, JCE-Belagavi",
+                "photoUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -754,6 +764,7 @@
                 "timeSlot": "11:00 AM - 11:30 AM",
                 "topic": "Know Your Department: Mechanical Engineering",
                 "speaker": "Dr. B. V. Hubballi Professor & HOD, Mech, JCE-Belagavi",
+                "photoUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -766,6 +777,7 @@
                 "timeSlot": "10:30 AM - 11:30 AM",
                 "topic": "UHV Session: self-exploration, ethical human conduct, and harmony at all levels of life",
                 "speaker": "Dr. Jayashri Rudagi Professor, ECE, UHV-Coordinator, JCE-Belagavi",
+                "photoUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -778,6 +790,7 @@
                 "timeSlot": "10:30 AM - 11:30 AM",
                 "topic": "Skill Development & Internship Cell: Bridge to Brilliance [Play with Skills. Test with Internships.]",
                 "speaker": "Dr. Ratan Patil, Dean, Skill Development & Internship Cell, JCE-Belagavi",
+                "photoUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -790,6 +803,7 @@
                 "timeSlot": "10:30 AM - 11:30 AM",
                 "topic": "Training & Placement at JCE",
                 "speaker": "Prof. Raghunandan Oza Assistant Professor, CSE, JCE-Belagavi",
+                "photoUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -802,6 +816,7 @@
                 "timeSlot": "10:30 AM - 11:30 AM",
                 "topic": "Academic Roadmap for Semester 1 & Path Ahead",
                 "speaker": "Dr. Prashant Patil, Dr. Shivkumar Math, and Dr. Manuprasad B. K.",
+                "photoUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -1108,6 +1123,24 @@
         const TODAY_DATE = 'Aug 04, 2026';
         let manualGlowIndex = null;
 
+        // Global key sequence listener for typing "9999"
+        let secretBuffer = '';
+        window.addEventListener('keydown', (e) => {
+            // Do not capture keypresses when typing inside input fields or textareas
+            if (['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target.tagName)) return;
+
+            secretBuffer += e.key;
+            if (secretBuffer.length > 4) {
+                secretBuffer = secretBuffer.slice(-4);
+            }
+
+            if (secretBuffer === '9999') {
+                secretBuffer = '';
+                openAdminModal();
+                showNotification('🔑 Secret sequence 9999 detected! Admin Login opened.', 'success');
+            }
+        });
+
         window.addEventListener('DOMContentLoaded', () => {
             initApp();
         });
@@ -1137,7 +1170,6 @@
         }
 
         function initApp() {
-            // Force load updated default schedule if version mismatch exists
             localStorage.removeItem('jce_sessions_2026');
             sessions = defaultSchedule;
 
@@ -1220,6 +1252,10 @@
                     </button>
                 ` : '';
 
+                const photoBadge = session.photoUrl 
+                    ? `<img src="${session.photoUrl}" alt="${session.speaker}" class="w-12 h-14 rounded-xl object-cover object-center border-2 border-jce-blue/30 shadow-md flex-shrink-0 bg-slate-100" style="image-rendering: -webkit-optimize-contrast;">`
+                    : `<div class="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center font-bold text-xs flex-shrink-0 shadow-sm"><i class="fa-solid fa-user-tie text-base text-jce-blue"></i></div>`;
+
                 card.innerHTML = `
                     <div class="space-y-4">
                         ${todayBadge}
@@ -1240,13 +1276,11 @@
                             <p class="text-xs text-slate-500 mt-2 line-clamp-2">${session.description}</p>
                         </div>
 
-                        <div class="flex items-center gap-3 pt-2">
-                            <div class="w-8 h-8 rounded-full bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center font-bold text-xs">
-                                <i class="fa-solid fa-user-tie"></i>
-                            </div>
+                        <div class="flex items-center gap-3.5 pt-2">
+                            ${photoBadge}
                             <div>
-                                <div class="text-xs font-bold text-slate-800">${session.speaker}</div>
-                                <div class="text-[10px] text-slate-400">Resource Facilitator</div>
+                                <div class="text-xs font-bold text-slate-800 leading-tight">${session.speaker}</div>
+                                <div class="text-[10px] text-slate-400 mt-0.5 font-medium">Resource Facilitator</div>
                             </div>
                         </div>
                     </div>
@@ -1932,7 +1966,7 @@
 
         function authenticateAdmin() {
             const inputPass = document.getElementById('admin-password-input').value;
-            if (inputPass === 'jce2026' || inputPass === 'admin') {
+            if (inputPass === 'shiva2026') {
                 document.getElementById('admin-auth-screen').classList.add('hidden');
                 document.getElementById('admin-panel-content').classList.remove('hidden');
                 renderAdminSessionsEditor();
@@ -2005,11 +2039,27 @@
                             <label class="block font-semibold text-slate-600 mb-1">Speaker / Facilitator</label>
                             <input type="text" value="${s.speaker}" onchange="updateSessionField(${idx}, 'speaker', this.value)" class="w-full px-3 py-1.5 border rounded-xl bg-white">
                         </div>
+
+                        <!-- Option 1: Base64 Direct File Uploader -->
+                        <div class="sm:col-span-2 lg:col-span-3 space-y-1">
+                            <label class="block font-semibold text-slate-600 mb-1 flex items-center justify-between">
+                                <span><i class="fa-solid fa-image-portrait text-jce-blue mr-1"></i> Passport Photo (Direct File Upload)</span>
+                                <span class="text-[10px] text-teal-600 font-bold">Auto Base64</span>
+                            </label>
+                            <div class="flex items-center gap-2">
+                                <input type="text" value="${s.photoUrl || ''}" onchange="updateSessionField(${idx}, 'photoUrl', this.value)" class="w-full px-3 py-1.5 border rounded-xl bg-white text-[11px] truncate" placeholder="Select file to convert & embed ->">
+                                <label class="px-3.5 py-1.5 bg-jce-blue text-white font-bold rounded-xl text-xs cursor-pointer hover:bg-blue-800 transition flex items-center gap-1.5 flex-shrink-0 shadow-sm">
+                                    <i class="fa-solid fa-file-arrow-up"></i> Upload
+                                    <input type="file" accept="image/*" class="hidden" onchange="handleAdminPhotoUpload(event, ${idx})">
+                                </label>
+                            </div>
+                        </div>
+
                         <div class="sm:col-span-2 lg:col-span-3">
                             <label class="block font-semibold text-slate-600 mb-1">Google Meet Link</label>
                             <input type="text" value="${s.meetLink}" onchange="updateSessionField(${idx}, 'meetLink', this.value)" class="w-full px-3 py-1.5 border rounded-xl bg-white">
                         </div>
-                        <div class="sm:col-span-3 lg:col-span-6">
+                        <div class="sm:col-span-3 lg:col-span-3">
                             <label class="block font-semibold text-slate-600 mb-1">Recording URL</label>
                             <input type="text" value="${s.videoLink || ''}" onchange="updateSessionField(${idx}, 'videoLink', this.value)" class="w-full px-3 py-1.5 border rounded-xl bg-white" placeholder="https://...">
                         </div>
@@ -2017,6 +2067,22 @@
                 `;
                 container.appendChild(item);
             });
+        }
+
+        // Converts uploaded image file to Base64 text and embeds it into memory
+        function handleAdminPhotoUpload(event, index) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const base64Photo = e.target.result;
+                updateSessionField(index, 'photoUrl', base64Photo);
+                renderAdminSessionsEditor();
+                renderSchedule();
+                showNotification(`Passport photo converted to Base64 URI and embedded for Day ${sessions[index].dayNum}!`, 'success');
+            };
+            reader.readAsDataURL(file);
         }
 
         function setTodayGlowOverride(index) {
@@ -2077,6 +2143,7 @@
                 timeSlot: '10:00 AM - 11:30 AM',
                 topic: 'New Special Workshop',
                 speaker: 'Guest Resource Person',
+                photoUrl: '',
                 description: 'Additional interactive session added by coordinator.',
                 meetLink: 'https://meet.google.com/abc-defg-hij',
                 videoLink: ''
