@@ -111,16 +111,29 @@
         <div class="absolute -right-10 -top-10 w-60 h-60 bg-white/5 rounded-full blur-2xl pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 relative z-10">
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <!-- Branding & Title -->
+                <!-- Branding & Title with Prominent College Name at Top Left (Logo Removed) -->
                 <div class="text-center md:text-left">
-                    <div class="inline-flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-3 text-jce-gold border border-white/20">
+                    <div class="mb-4">
+                        <!-- Prominent College Name Display at Top Left -->
+                        <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black font-display tracking-tight text-white uppercase drop-shadow-md">
+                            Jain College of Engineering, Belagavi
+                        </h2>
+                        <p class="text-xs sm:text-sm text-jce-gold font-bold tracking-wider mt-0.5">
+                            Approved by AICTE, New Delhi & Affiliated to VTU, Belagavi
+                        </p>
+                        <p class="text-xs sm:text-sm text-amber-300 font-semibold tracking-wide mt-0.5">
+                            Accredited by NBA (Dept. of CVE, CSE, ECE and EEE)
+                        </p>
+                    </div>
+
+                    <div class="inline-flex items-center gap-2 bg-white/10 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-2 text-jce-gold border border-white/20">
                         <i class="fa-solid fa-graduation-cap"></i> Student Orientation Program 2026
                     </div>
-                    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold font-display leading-tight tracking-tight text-white">
+                    <h1 class="text-2xl sm:text-3xl font-extrabold font-display leading-tight text-slate-100">
                         Welcome to Your <span class="text-amber-400">Engineering Journey</span>
                     </h1>
-                    <p class="text-slate-200 text-sm sm:text-base mt-2 max-w-2xl font-light">
-                        Jain College of Engineering, Belagavi — Empowering future innovators through 10 transformative days of interactive learning, keynotes, and campus games.
+                    <p class="text-slate-200 text-xs sm:text-sm mt-2 max-w-2xl font-light">
+                        Empowering future innovators through 10 transformative days of interactive learning, keynotes, virtual labs, and campus games.
                     </p>
                 </div>
 
@@ -175,7 +188,7 @@
                     <span class="bg-blue-600 text-white text-xs px-3 py-1 rounded-full font-bold uppercase tracking-wider">Live Orientation Schedule</span>
                     <h2 class="text-2xl font-bold font-display text-slate-900">Interactive 10-Day Session Roadmap</h2>
                     <p class="text-slate-600 text-sm max-w-2xl">
-                        Sessions are conducted daily online via Google Meet. Click on <strong>"Join Live Meet"</strong> at the scheduled session time or access session recordings below.
+                        Sessions are conducted daily online via Google Meet. Click on <strong>"Join Live Meet"</strong> or access assigned course material links for each session below.
                     </p>
                 </div>
                 <div class="flex items-center gap-3">
@@ -519,7 +532,7 @@
                     </div>
                     <div>
                         <h3 class="text-lg font-bold font-display">Coordinator Admin Dashboard</h3>
-                        <p class="text-xs text-slate-300">Dr. Shivkumar Math — Session Management Suite</p>
+                        <p class="text-xs text-slate-300">Dr. Shivkumar Math — Session & Course URL Suite</p>
                     </div>
                 </div>
                 <button onclick="closeAdminModal()" class="text-slate-300 hover:text-white text-lg">
@@ -533,7 +546,7 @@
                     <i class="fa-solid fa-lock"></i>
                 </div>
                 <h4 class="text-xl font-bold text-slate-900">Protected Area</h4>
-                <p class="text-xs text-slate-500">Please enter the coordinator access password to edit session details, Meet links, resource person photos, or clear submissions.</p>
+                <p class="text-xs text-slate-500">Please enter the coordinator access password to edit session details, Meet links, Online Course URLs, or passport photos.</p>
                 <div class="space-y-3">
                     <input type="password" id="admin-password-input" placeholder="Enter Passcode" class="w-full px-4 py-2.5 border border-slate-300 rounded-xl text-xs text-center focus:ring-2 focus:ring-jce-blue focus:outline-none font-bold">
                     <button onclick="authenticateAdmin()" class="w-full py-2.5 bg-jce-blue hover:bg-blue-800 text-white font-bold rounded-xl text-xs transition">
@@ -547,7 +560,7 @@
             <div id="admin-panel-content" class="hidden p-6 space-y-6">
                 <div class="bg-amber-50 border border-amber-200 p-4 rounded-2xl text-xs text-amber-900 space-y-1">
                     <p class="font-bold flex items-center gap-2"><i class="fa-solid fa-circle-info"></i> Option 1: Passport Photo Upload & Single-File Export Instructions:</p>
-                    <p>• <strong>Upload Passport Photo:</strong> Click <strong class="bg-blue-100 text-jce-blue px-1 rounded"><i class="fa-solid fa-upload"></i> Upload</strong> to select a photo from your computer. It converts automatically into a Base64 text URI so it stays permanently inside your single HTML file!</p>
+                    <p>• <strong>Upload Passport Photo:</strong> Click <strong class="bg-blue-100 text-jce-blue px-1 rounded"><i class="fa-solid fa-upload"></i> Upload</strong> to select a photo from your computer. It converts automatically into Base64 so it stays permanently inside your single HTML file!</p>
                     <p>• <strong>Edit Day & Date:</strong> Modify Day #, Day of Week, and Date via dedicated inputs on each session card.</p>
                     <p>• <strong>Glow Override:</strong> Click <strong class="bg-amber-200 text-amber-900 px-1 rounded"><i class="fa-solid fa-sun"></i> Set as Today's Glow</strong> to force live golden highlight on any card.</p>
                     <p>• <strong>Split Sessions:</strong> Click <strong class="bg-amber-200 text-amber-900 px-1 rounded">Split (45m + 45m)</strong> to divide a 90-minute session into two 45-minute sub-sessions.</p>
@@ -622,6 +635,7 @@
                 "topic": "Welcome to Engineering Excellence : Orientation Inauguration and Academic Vision — Part I",
                 "speaker": "Dr. J. Shivakumar, Principal & Director, JCE-Belagavi",
                 "photoUrl": "",
+                "courseUrl": "https://vlab.amrita.edu/",
                 "description": "Additional interactive session added by coordinator. (First 45-min segment)",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -635,6 +649,7 @@
                 "topic": "Engineering College Culture",
                 "speaker": "Dr. Rajashekargouda C. Patil, Dean Academics, JCE-Belagavi",
                 "photoUrl": "",
+                "courseUrl": "",
                 "description": "Additional interactive session added by coordinator. (Second 45-min segment)",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -648,6 +663,7 @@
                 "topic": "Student Engagement Cell at JCE :The Spectrum Council",
                 "speaker": "Dr. Varsha Gokak, Asst. Professor, Civil Engg., JCE-Belagavi",
                 "photoUrl": "",
+                "courseUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -661,6 +677,7 @@
                 "topic": "Energy Literacy Cell: Fueling Awareness, Saving Nature",
                 "speaker": "Prof. Yogish Chavadi, Asst. Prof. EEE Dept. JCE-Belagavi",
                 "photoUrl": "",
+                "courseUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -674,6 +691,7 @@
                 "topic": "Yuva AI for All: Ethical AI use for study, work, and everyday life",
                 "speaker": "Dr. Shivkumar Math, Professor & HOD, Physics, JCE-Belagavi",
                 "photoUrl": "",
+                "courseUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -687,6 +705,7 @@
                 "topic": "NISM:Financial literacy Course for Bharat",
                 "speaker": "Dr. S.RohitRaj Professor & HOD, MBA-Dept, JCE-Belagavi",
                 "photoUrl": "",
+                "courseUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -700,6 +719,7 @@
                 "topic": "Know Your Department: Computer Science Engineering (CSE)",
                 "speaker": "Dr. Uttam Patil, Professor & HOD - Computer Science Engg. JCE-Belagavi",
                 "photoUrl": "",
+                "courseUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -713,6 +733,7 @@
                 "topic": "Know Your Department: Artificial Intelligence & Machine Learning (AIML)",
                 "speaker": "Dr. Sachinkumar. Professor & HOD, AIML, JCE-Belagavi",
                 "photoUrl": "",
+                "courseUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -726,6 +747,7 @@
                 "topic": "Know Your Department: Electronics & Communication Engineering (ECE)",
                 "speaker": "Dr. Vinayakumar R. Bagali. Professor & HOD, ECE, JCE-Belagavi",
                 "photoUrl": "",
+                "courseUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -739,6 +761,7 @@
                 "topic": "Know Your Department: Electronics & Electrical Engineering (EEE)",
                 "speaker": "Dr. Mallikarjuna G. D., Associate Professor & HOD, EEE-Belagavi",
                 "photoUrl": "",
+                "courseUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -752,6 +775,7 @@
                 "topic": "Know Your Department: Civil Engineering",
                 "speaker": "Dr. Mithun B.M. Professor & HOD, Civil Engg, JCE-Belagavi",
                 "photoUrl": "",
+                "courseUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -765,6 +789,7 @@
                 "topic": "Know Your Department: Mechanical Engineering",
                 "speaker": "Dr. B. V. Hubballi Professor & HOD, Mech, JCE-Belagavi",
                 "photoUrl": "",
+                "courseUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -778,6 +803,7 @@
                 "topic": "UHV Session: self-exploration, ethical human conduct, and harmony at all levels of life",
                 "speaker": "Dr. Jayashri Rudagi Professor, ECE, UHV-Coordinator, JCE-Belagavi",
                 "photoUrl": "",
+                "courseUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -791,6 +817,7 @@
                 "topic": "Skill Development & Internship Cell: Bridge to Brilliance [Play with Skills. Test with Internships.]",
                 "speaker": "Dr. Ratan Patil, Dean, Skill Development & Internship Cell, JCE-Belagavi",
                 "photoUrl": "",
+                "courseUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -804,6 +831,7 @@
                 "topic": "Training & Placement at JCE",
                 "speaker": "Prof. Raghunandan Oza Assistant Professor, CSE, JCE-Belagavi",
                 "photoUrl": "",
+                "courseUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -817,6 +845,7 @@
                 "topic": "Academic Roadmap for Semester 1 & Path Ahead",
                 "speaker": "Dr. Prashant Patil, Dr. Shivkumar Math, and Dr. Manuprasad B. K.",
                 "photoUrl": "",
+                "courseUrl": "",
                 "description": "Additional interactive session added by coordinator.",
                 "meetLink": "https://meet.google.com/abc-defg-hij",
                 "videoLink": ""
@@ -1126,7 +1155,6 @@
         // Global key sequence listener for typing "9999"
         let secretBuffer = '';
         window.addEventListener('keydown', (e) => {
-            // Do not capture keypresses when typing inside input fields or textareas
             if (['INPUT', 'TEXTAREA', 'SELECT'].includes(e.target.tagName)) return;
 
             secretBuffer += e.key;
@@ -1252,6 +1280,12 @@
                     </button>
                 ` : '';
 
+                const courseBtn = session.courseUrl ? `
+                    <a href="${session.courseUrl}" target="_blank" class="px-3.5 py-1.5 bg-teal-50 hover:bg-teal-100 text-teal-700 rounded-xl text-xs font-bold transition flex items-center gap-1.5 border border-teal-200 shadow-sm">
+                        <i class="fa-solid fa-graduation-cap text-teal-600"></i> Course Material / Virtual Lab
+                    </a>
+                ` : '';
+
                 const photoBadge = session.photoUrl 
                     ? `<img src="${session.photoUrl}" alt="${session.speaker}" class="w-12 h-14 rounded-xl object-cover object-center border-2 border-jce-blue/30 shadow-md flex-shrink-0 bg-slate-100" style="image-rendering: -webkit-optimize-contrast;">`
                     : `<div class="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center font-bold text-xs flex-shrink-0 shadow-sm"><i class="fa-solid fa-user-tie text-base text-jce-blue"></i></div>`;
@@ -1285,10 +1319,13 @@
                         </div>
                     </div>
 
-                    <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-3">
-                        <a href="${session.meetLink}" target="_blank" class="px-4 py-2 bg-jce-blue hover:bg-blue-800 text-white font-bold rounded-xl text-xs transition flex items-center gap-2 shadow-sm pulse-subtle">
-                            <i class="fa-solid fa-video"></i> Join Live Google Meet
-                        </a>
+                    <div class="mt-6 pt-4 border-t border-slate-100 flex flex-wrap items-center justify-between gap-2">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <a href="${session.meetLink}" target="_blank" class="px-4 py-2 bg-jce-blue hover:bg-blue-800 text-white font-bold rounded-xl text-xs transition flex items-center gap-2 shadow-sm pulse-subtle">
+                                <i class="fa-solid fa-video"></i> Join Live Google Meet
+                            </a>
+                            ${courseBtn}
+                        </div>
                         ${videoBtn}
                     </div>
                 `;
@@ -2040,7 +2077,7 @@
                             <input type="text" value="${s.speaker}" onchange="updateSessionField(${idx}, 'speaker', this.value)" class="w-full px-3 py-1.5 border rounded-xl bg-white">
                         </div>
 
-                        <!-- Option 1: Base64 Direct File Uploader -->
+                        <!-- Passport Photo Input -->
                         <div class="sm:col-span-2 lg:col-span-3 space-y-1">
                             <label class="block font-semibold text-slate-600 mb-1 flex items-center justify-between">
                                 <span><i class="fa-solid fa-image-portrait text-jce-blue mr-1"></i> Passport Photo (Direct File Upload)</span>
@@ -2055,11 +2092,20 @@
                             </div>
                         </div>
 
+                        <!-- Online Course URL Feature -->
+                        <div class="sm:col-span-2 lg:col-span-3 space-y-1">
+                            <label class="block font-semibold text-slate-600 mb-1 flex items-center justify-between">
+                                <span><i class="fa-solid fa-graduation-cap text-teal-600 mr-1"></i> Online Course / Virtual Lab URL</span>
+                                <span class="text-[10px] text-teal-700 font-bold">Student Link</span>
+                            </label>
+                            <input type="text" value="${s.courseUrl || ''}" onchange="updateSessionField(${idx}, 'courseUrl', this.value)" class="w-full px-3 py-1.5 border rounded-xl bg-white text-xs" placeholder="https://vlab.amrita.edu/ or course link">
+                        </div>
+
                         <div class="sm:col-span-2 lg:col-span-3">
                             <label class="block font-semibold text-slate-600 mb-1">Google Meet Link</label>
                             <input type="text" value="${s.meetLink}" onchange="updateSessionField(${idx}, 'meetLink', this.value)" class="w-full px-3 py-1.5 border rounded-xl bg-white">
                         </div>
-                        <div class="sm:col-span-3 lg:col-span-3">
+                        <div class="sm:col-span-2 lg:col-span-3">
                             <label class="block font-semibold text-slate-600 mb-1">Recording URL</label>
                             <input type="text" value="${s.videoLink || ''}" onchange="updateSessionField(${idx}, 'videoLink', this.value)" class="w-full px-3 py-1.5 border rounded-xl bg-white" placeholder="https://...">
                         </div>
@@ -2144,6 +2190,7 @@
                 topic: 'New Special Workshop',
                 speaker: 'Guest Resource Person',
                 photoUrl: '',
+                courseUrl: '',
                 description: 'Additional interactive session added by coordinator.',
                 meetLink: 'https://meet.google.com/abc-defg-hij',
                 videoLink: ''
