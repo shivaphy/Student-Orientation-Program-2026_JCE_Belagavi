@@ -111,7 +111,7 @@
         <div class="absolute -right-10 -top-10 w-60 h-60 bg-white/5 rounded-full blur-2xl pointer-events-none"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10 relative z-10">
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <!-- Branding & Title with Prominent College Name at Top Left (Logo Removed) -->
+                <!-- Branding & Title with Prominent College Name at Top Left -->
                 <div class="text-center md:text-left">
                     <div class="mb-4">
                         <!-- Prominent College Name Display at Top Left -->
@@ -247,7 +247,8 @@
                         <select id="student-branch" onchange="saveStudentProfile()" class="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl text-xs focus:ring-2 focus:ring-jce-blue focus:outline-none bg-white">
                             <option value="">Select Department</option>
                             <option value="Computer Science (CSE)">Computer Science (CSE)</option>
-                            <option value="Artificial Intelligence Machine Learning (AIML)">Artificial Intelligence Machine Learning (AIML)</option>
+                            <!-- CORRECTION 2: Updated Branch Title to Artificial Intelligence & Machine Learning (AI&ML) -->
+                            <option value="Artificial Intelligence & Machine Learning (AI&ML)">Artificial Intelligence & Machine Learning (AI&ML)</option>
                             <option value="Electronics & Comm. (ECE)">Electronics & Comm. (ECE)</option>
                             <option value="Electrical & Electronics (EEE)">Electrical & Electronics (EEE)</option>
                             <option value="Mechanical Engg. (ME)">Mechanical Engg. (ME)</option>
@@ -449,7 +450,7 @@
                         <select id="leaderboard-branch-filter" onchange="renderLeaderboard()" class="px-3.5 py-2 border border-slate-300 rounded-xl text-xs font-semibold text-slate-700 bg-white focus:outline-none">
                             <option value="ALL">All Departments</option>
                             <option value="Computer Science (CSE)">CSE</option>
-                            <option value="Artificial Intelligence Machine Learning (AIML)">AIML</option>
+                            <option value="Artificial Intelligence & Machine Learning (AI&ML)">AIML</option>
                             <option value="Electronics & Comm. (ECE)">ECE</option>
                             <option value="Electrical & Electronics (EEE)">EEE</option>
                             <option value="Mechanical Engg. (ME)">ME</option>
@@ -716,6 +717,7 @@
                 "dateStr": "Aug 10, 2026",
                 "week": "week2",
                 "timeSlot": "10:30 AM - 11:30 AM",
+                <!-- CORRECTION 1: Updated to Computer Science & Engineering (CSE) -->
                 "topic": "Know Your Department: Computer Science & Engineering (CSE)",
                 "speaker": "Dr. Uttam Patil, Professor & HOD - Computer Science Engg. JCE-Belagavi",
                 "photoUrl": "",
