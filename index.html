@@ -114,7 +114,6 @@
                 <!-- Branding & Title with Prominent College Name at Top Left -->
                 <div class="text-center md:text-left">
                     <div class="mb-4">
-                        <!-- Prominent College Name Display at Top Left -->
                         <h2 class="text-2xl sm:text-3xl lg:text-4xl font-black font-display tracking-tight text-white uppercase drop-shadow-md">
                             Jain College of Engineering, Belagavi
                         </h2>
@@ -247,7 +246,6 @@
                         <select id="student-branch" onchange="saveStudentProfile()" class="w-full px-3.5 py-2.5 border border-slate-300 rounded-xl text-xs focus:ring-2 focus:ring-jce-blue focus:outline-none bg-white">
                             <option value="">Select Department</option>
                             <option value="Computer Science (CSE)">Computer Science (CSE)</option>
-                            <!-- CORRECTION 2: Updated Branch Title to Artificial Intelligence & Machine Learning (AI&ML) -->
                             <option value="Artificial Intelligence & Machine Learning (AI&ML)">Artificial Intelligence & Machine Learning (AI&ML)</option>
                             <option value="Electronics & Comm. (ECE)">Electronics & Comm. (ECE)</option>
                             <option value="Electrical & Electronics (EEE)">Electrical & Electronics (EEE)</option>
@@ -626,6 +624,7 @@
     <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 max-w-sm w-full pointer-events-none"></div>
 
     <script>
+        // Schedule Dataset containing exact Google Meet URLs from Word Document
         const defaultSchedule = [
             {
                 "dayNum": 1,
@@ -634,11 +633,11 @@
                 "week": "week1",
                 "timeSlot": "10:00 AM - 10:45 AM (Part 1)",
                 "topic": "Welcome to Engineering Excellence : Orientation Inauguration and Academic Vision — Part I",
-                "speaker": "Dr. J. Shivakumar, Principal & Director, JCE-Belagavi",
+                "speaker": "Dr. J. Shivkumar, Principal & Director, JCE-Belagavi",
                 "photoUrl": "",
                 "courseUrl": "https://vlab.amrita.edu/",
-                "description": "Additional interactive session added by coordinator. (First 45-min segment)",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "description": "Inaugural session introducing VTU regulations, academic curriculum, and institutional vision.",
+                "meetLink": "https://meet.google.com/vgp-yrzy-ysd",
                 "videoLink": ""
             },
             {
@@ -651,8 +650,8 @@
                 "speaker": "Dr. Rajashekargouda C. Patil, Dean Academics, JCE-Belagavi",
                 "photoUrl": "",
                 "courseUrl": "",
-                "description": "Additional interactive session added by coordinator. (Second 45-min segment)",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "description": "Overview of engineering disciplines, academic guidelines, and campus culture.",
+                "meetLink": "https://meet.google.com/vgp-yrzy-ysd",
                 "videoLink": ""
             },
             {
@@ -665,8 +664,8 @@
                 "speaker": "Dr. Varsha Gokak, Asst. Professor, Civil Engg., JCE-Belagavi",
                 "photoUrl": "",
                 "courseUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "description": "A broad range of activities built on structural order and student empowerment.",
+                "meetLink": "https://meet.google.com/wcp-wtqu-hnz",
                 "videoLink": ""
             },
             {
@@ -679,8 +678,8 @@
                 "speaker": "Prof. Yogish Chavadi, Asst. Prof. EEE Dept. JCE-Belagavi",
                 "photoUrl": "",
                 "courseUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "description": "Promoting clean energy awareness, sustainability, and ecological conservation.",
+                "meetLink": "https://meet.google.com/eev-vkqh-kaz",
                 "videoLink": ""
             },
             {
@@ -690,11 +689,11 @@
                 "week": "week1",
                 "timeSlot": "10:30 AM - 11:30 AM",
                 "topic": "Yuva AI for All: Ethical AI use for study, work, and everyday life",
-                "speaker": "Dr. Shivkumar Math, Professor & HOD, Physics, JCE-Belagavi",
+                "speaker": "Dr. Shrivatsa D Perur, Assoc. Professor, CSE, JCE-Belagavi",
                 "photoUrl": "",
                 "courseUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "description": "Learn fundamentals of artificial intelligence, practical productivity tools, and ethical AI usage.",
+                "meetLink": "https://meet.google.com/gcm-uhyt-aiw",
                 "videoLink": ""
             },
             {
@@ -707,8 +706,8 @@
                 "speaker": "Dr. S.RohitRaj Professor & HOD, MBA-Dept, JCE-Belagavi",
                 "photoUrl": "",
                 "courseUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "description": "Equips learners with essential financial knowledge, budgeting, and investment literacy.",
+                "meetLink": "https://meet.google.com/wtr-jkim-gmk",
                 "videoLink": ""
             },
             {
@@ -717,13 +716,12 @@
                 "dateStr": "Aug 10, 2026",
                 "week": "week2",
                 "timeSlot": "10:30 AM - 11:30 AM",
-                <!-- CORRECTION 1: Updated to Computer Science & Engineering (CSE) -->
                 "topic": "Know Your Department: Computer Science & Engineering (CSE)",
                 "speaker": "Dr. Uttam Patil, Professor & HOD - Computer Science Engg. JCE-Belagavi",
                 "photoUrl": "",
                 "courseUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "description": "Department orientation covering algorithms, software development labs, and computing career paths.",
+                "meetLink": "https://meet.google.com/odq-fawj-cse",
                 "videoLink": ""
             },
             {
@@ -736,8 +734,8 @@
                 "speaker": "Dr. Sachinkumar. Professor & HOD, AIML, JCE-Belagavi",
                 "photoUrl": "",
                 "courseUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "description": "Insights into AI models, neural networks, machine learning algorithms, and intelligent systems.",
+                "meetLink": "https://meet.google.com/guo-hdfy-fjo",
                 "videoLink": ""
             },
             {
@@ -750,8 +748,8 @@
                 "speaker": "Dr. Vinayakumar R. Bagali. Professor & HOD, ECE, JCE-Belagavi",
                 "photoUrl": "",
                 "courseUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "description": "Introduction to signal processing, semiconductor circuits, wireless systems, and IoT hardware.",
+                "meetLink": "https://meet.google.com/ntn-rpxq-fqm",
                 "videoLink": ""
             },
             {
@@ -764,8 +762,8 @@
                 "speaker": "Dr. Mallikarjuna G. D., Associate Professor & HOD, EEE-Belagavi",
                 "photoUrl": "",
                 "courseUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "description": "Understanding power systems, renewable energy grids, electric vehicles, and circuit automation.",
+                "meetLink": "https://meet.google.com/hzq-wbus-duk",
                 "videoLink": ""
             },
             {
@@ -778,8 +776,8 @@
                 "speaker": "Dr. Mithun B.M. Professor & HOD, Civil Engg, JCE-Belagavi",
                 "photoUrl": "",
                 "courseUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "description": "Structural engineering fundamentals, sustainable infrastructure, surveying, and smart city architecture.",
+                "meetLink": "https://meet.google.com/aiy-fbjq-psd",
                 "videoLink": ""
             },
             {
@@ -792,8 +790,8 @@
                 "speaker": "Dr. B. V. Hubballi Professor & HOD, Mech, JCE-Belagavi",
                 "photoUrl": "",
                 "courseUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "description": "3D CAD modeling, robotics, thermodynamics, manufacturing technologies, and mechanical systems.",
+                "meetLink": "https://meet.google.com/wgb-vskn-deq",
                 "videoLink": ""
             },
             {
@@ -802,12 +800,12 @@
                 "dateStr": "Aug 11, 2026",
                 "week": "week2",
                 "timeSlot": "10:30 AM - 11:30 AM",
-                "topic": "UHV Session: self-exploration, ethical human conduct, and harmony at all levels of life",
+                "topic": "Universal Human Values (UHV)",
                 "speaker": "Dr. Jayashri Rudagi Professor, ECE, UHV-Coordinator, JCE-Belagavi",
                 "photoUrl": "",
                 "courseUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "description": "Right understanding, ensuring harmony at all levels of living, and balancing technical skills with moral responsibility.",
+                "meetLink": "https://meet.google.com/fjz-nxwj-ums",
                 "videoLink": ""
             },
             {
@@ -820,8 +818,8 @@
                 "speaker": "Dr. Ratan Patil, Dean, Skill Development & Internship Cell, JCE-Belagavi",
                 "photoUrl": "",
                 "courseUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "description": "Hands-on skill building programs, industry certifications, and corporate internship opportunities.",
+                "meetLink": "https://meet.google.com/sxc-hgfy-dwi",
                 "videoLink": ""
             },
             {
@@ -834,8 +832,8 @@
                 "speaker": "Prof. Raghunandan Oza Assistant Professor, CSE, JCE-Belagavi",
                 "photoUrl": "",
                 "courseUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "description": "Campus recruitment drives, career readiness, interview preparation, and placement statistics.",
+                "meetLink": "https://meet.google.com/jic-muyz-opw",
                 "videoLink": ""
             },
             {
@@ -848,8 +846,8 @@
                 "speaker": "Dr. Prashant Patil, Dr. Shivkumar Math, and Dr. Manuprasad B. K.",
                 "photoUrl": "",
                 "courseUrl": "",
-                "description": "Additional interactive session added by coordinator.",
-                "meetLink": "https://meet.google.com/abc-defg-hij",
+                "description": "Guidance on VTU examinations, grading systems, attendance requirements, and valedictory closing.",
+                "meetLink": "https://meet.google.com/eha-pwgk-gzx",
                 "videoLink": ""
             }
         ];
