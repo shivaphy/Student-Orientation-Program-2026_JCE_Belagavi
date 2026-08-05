@@ -598,7 +598,7 @@
 
                 <div class="pt-4 border-t border-slate-200 flex justify-end">
                     <button onclick="saveAdminSessions()" class="px-6 py-2.5 bg-jce-blue hover:bg-blue-800 text-white font-bold rounded-xl text-xs transition shadow-md flex items-center gap-2">
-                        <i class="fa-solid fa-floppy-disk"></i> Save Local Changes
+                        <i class="fa-solid fa-floppy-disk"></i> Save & Broadcast Changes
                     </button>
                 </div>
             </div>
@@ -649,6 +649,7 @@
         }
         const db = firebase.database();
         const leaderboardRef = db.ref('leaderboard');
+        const sessionsRef = db.ref('sessions');
 
         // Schedule Dataset
         const defaultSchedule = [
@@ -1227,8 +1228,23 @@
         }
 
         function initApp() {
-            localStorage.removeItem('jce_sessions_2026');
-            sessions = defaultSchedule;
+            // Subscribe to Firebase Realtime Database for Day Session Cards
+            sessionsRef.on('value', (snapshot) => {
+                const data = snapshot.val();
+                if (data && Array.isArray(data) && data.length > 0) {
+                    sessions = data;
+                } else {
+                    // Seed database with default schedule if empty
+                    sessions = [...defaultSchedule];
+                    sessionsRef.set(defaultSchedule);
+                }
+                renderSchedule();
+                renderVideoGallery();
+                if (!document.getElementById('admin-modal').classList.contains('hidden') && 
+                    !document.getElementById('admin-panel-content').classList.contains('hidden')) {
+                    renderAdminSessionsEditor();
+                }
+            });
 
             const savedProfile = localStorage.getItem('jce_student_profile');
             if (savedProfile) {
@@ -1252,11 +1268,9 @@
                 renderLeaderboard();
             });
 
-            renderSchedule();
             renderEmojiPuzzles();
             renderDaySelectorButtons();
             selectActivityDay(1);
-            renderVideoGallery();
         }
 
         function switchTab(tabId) {
@@ -2255,10 +2269,15 @@
         function resetScheduleToDefault() {
             sessions = [...defaultSchedule];
             manualGlowIndex = null;
-            localStorage.removeItem('jce_sessions_2026');
-            renderAdminSessionsEditor();
-            renderSchedule();
-            showNotification('Schedule reset to original defaults.', 'info');
+            sessionsRef.set(defaultSchedule)
+                .then(() => {
+                    renderAdminSessionsEditor();
+                    showNotification('Schedule reset to original defaults live on database.', 'info');
+                })
+                .catch((err) => {
+                    console.error("Firebase reset error:", err);
+                    showNotification('Failed to reset defaults on database.', 'error');
+                });
         }
 
         function clearAllLeaderboardData() {
@@ -2271,11 +2290,15 @@
         }
 
         function saveAdminSessions() {
-            localStorage.setItem('jce_sessions_2026', JSON.stringify(sessions));
-            renderSchedule();
-            renderVideoGallery();
-            closeAdminModal();
-            showNotification('All local session updates saved successfully!', 'success');
+            sessionsRef.set(sessions)
+                .then(() => {
+                    closeAdminModal();
+                    showNotification('All session updates synced live to Firebase for all users!', 'success');
+                })
+                .catch((err) => {
+                    console.error("Firebase session sync error:", err);
+                    showNotification('Failed to sync changes to database.', 'error');
+                });
         }
 
         function exportUpdatedHTML() {
