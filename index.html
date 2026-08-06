@@ -1178,9 +1178,9 @@
         let activeScheduleFilter = 'all';
         let currentActivityDay = 1;
 
-        // Today's Date updated to Aug 05, 2026 for Day 2 Active Glowing Status
-        const TODAY_DATE = 'Aug 05, 2026';
-        let manualGlowIndex = null;
+        // Active Glowing Status forced for Day 3 (Prof. Yogesh Chavadi)
+        const TODAY_DATE = 'Aug 06, 2026';
+        let manualGlowIndex = 3;
 
         // Key sequence listener for typing "9999"
         let secretBuffer = '';
@@ -2268,7 +2268,7 @@
 
         function resetScheduleToDefault() {
             sessions = [...defaultSchedule];
-            manualGlowIndex = null;
+            manualGlowIndex = 3;
             sessionsRef.set(defaultSchedule)
                 .then(() => {
                     renderAdminSessionsEditor();
