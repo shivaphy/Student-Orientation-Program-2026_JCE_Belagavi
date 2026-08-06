@@ -571,7 +571,7 @@
                     <p class="font-bold flex items-center gap-2"><i class="fa-solid fa-circle-info"></i> Option 1: Passport Photo Upload & Single-File Export Instructions:</p>
                     <p>• <strong>Upload Passport Photo:</strong> Click <strong class="bg-blue-100 text-jce-blue px-1 rounded"><i class="fa-solid fa-upload"></i> Upload</strong> to select a photo from your computer.</p>
                     <p>• <strong>Edit Day & Date:</strong> Modify Day #, Day of Week, and Date via dedicated inputs on each session card.</p>
-                    <p>• <strong>Glow Override:</strong> Click <strong class="bg-amber-200 text-amber-900 px-1 rounded"><i class="fa-solid fa-sun"></i> Set as Today's Glow</strong> to force live golden highlight on any card.</p>
+                    <p>• <strong>Glowing Active Toggle:</strong> Switch the <strong class="bg-amber-200 text-amber-900 px-1 rounded">Glowing State ON/OFF</strong> toggle to broadcast live visual highlights to all users in real time.</p>
                     <p>• <strong>Publish to GitHub:</strong> Click <strong class="bg-amber-300 text-amber-950 px-1 rounded"><i class="fa-solid fa-file-code"></i> Export Updated HTML</strong> to download your updated `index.html` file!</p>
                 </div>
 
@@ -651,7 +651,7 @@
         const leaderboardRef = db.ref('leaderboard');
         const sessionsRef = db.ref('sessions');
 
-        // Schedule Dataset
+        // Schedule Dataset with isGlowActive state modeling
         const defaultSchedule = [
             {
                 "dayNum": 1,
@@ -665,7 +665,8 @@
                 "courseUrl": "",
                 "description": "Inaugural session introducing VTU regulations, academic curriculum, and institutional vision.",
                 "meetLink": "https://meet.google.com/vgp-yrzy-ysd",
-                "videoLink": ""
+                "videoLink": "",
+                "isGlowActive": false
             },
             {
                 "dayNum": 1,
@@ -679,7 +680,8 @@
                 "courseUrl": "",
                 "description": "Overview of engineering disciplines, academic guidelines, and campus culture.",
                 "meetLink": "https://meet.google.com/vgp-yrzy-ysd",
-                "videoLink": ""
+                "videoLink": "",
+                "isGlowActive": false
             },
             {
                 "dayNum": 2,
@@ -695,7 +697,8 @@
                 "meetLink": "https://meet.google.com/wcp-wtqu-hnz",
                 "secondMeetLink": "https://meet.google.com/nju-zzmf-ozt",
                 "meetInstructions": "If the first Google Meet link is full, please join with the second Google Meet link.",
-                "videoLink": ""
+                "videoLink": "",
+                "isGlowActive": false
             },
             {
                 "dayNum": 3,
@@ -709,7 +712,8 @@
                 "courseUrl": "",
                 "description": "Promoting clean energy awareness, sustainability, and ecological conservation.",
                 "meetLink": "https://meet.google.com/eev-vkqh-kaz",
-                "videoLink": ""
+                "videoLink": "",
+                "isGlowActive": true
             },
             {
                 "dayNum": 4,
@@ -723,7 +727,8 @@
                 "courseUrl": "",
                 "description": "Learn fundamentals of artificial intelligence, practical productivity tools, and ethical AI usage.",
                 "meetLink": "https://meet.google.com/gcm-uhyt-aiw",
-                "videoLink": ""
+                "videoLink": "",
+                "isGlowActive": false
             },
             {
                 "dayNum": 5,
@@ -737,7 +742,8 @@
                 "courseUrl": "",
                 "description": "Equips learners with essential financial knowledge, budgeting, and investment literacy.",
                 "meetLink": "https://meet.google.com/wtr-jkim-gmk",
-                "videoLink": ""
+                "videoLink": "",
+                "isGlowActive": false
             },
             {
                 "dayNum": 7,
@@ -751,7 +757,8 @@
                 "courseUrl": "",
                 "description": "Department orientation covering algorithms, software development labs, and computing career paths.",
                 "meetLink": "https://meet.google.com/odq-fawj-cse",
-                "videoLink": ""
+                "videoLink": "",
+                "isGlowActive": false
             },
             {
                 "dayNum": 7,
@@ -765,7 +772,8 @@
                 "courseUrl": "",
                 "description": "Insights into AI models, neural networks, machine learning algorithms, and intelligent systems.",
                 "meetLink": "https://meet.google.com/guo-hdfy-fjo",
-                "videoLink": ""
+                "videoLink": "",
+                "isGlowActive": false
             },
             {
                 "dayNum": 7,
@@ -779,7 +787,8 @@
                 "courseUrl": "",
                 "description": "Introduction to signal processing, semiconductor circuits, wireless systems, and IoT hardware.",
                 "meetLink": "https://meet.google.com/ntn-rpxq-fqm",
-                "videoLink": ""
+                "videoLink": "",
+                "isGlowActive": false
             },
             {
                 "dayNum": 7,
@@ -793,7 +802,8 @@
                 "courseUrl": "",
                 "description": "Understanding power systems, renewable energy grids, electric vehicles, and circuit automation.",
                 "meetLink": "https://meet.google.com/hzq-wbus-duk",
-                "videoLink": ""
+                "videoLink": "",
+                "isGlowActive": false
             },
             {
                 "dayNum": 7,
@@ -807,7 +817,8 @@
                 "courseUrl": "",
                 "description": "Structural engineering fundamentals, sustainable infrastructure, surveying, and smart city architecture.",
                 "meetLink": "https://meet.google.com/aiy-fbjq-psd",
-                "videoLink": ""
+                "videoLink": "",
+                "isGlowActive": false
             },
             {
                 "dayNum": 7,
@@ -821,7 +832,8 @@
                 "courseUrl": "",
                 "description": "3D CAD modeling, robotics, thermodynamics, manufacturing technologies, and mechanical systems.",
                 "meetLink": "https://meet.google.com/wgb-vskn-deq",
-                "videoLink": ""
+                "videoLink": "",
+                "isGlowActive": false
             },
             {
                 "dayNum": 8,
@@ -835,7 +847,8 @@
                 "courseUrl": "",
                 "description": "Right understanding, ensuring harmony at all levels of living, and balancing technical skills with moral responsibility.",
                 "meetLink": "https://meet.google.com/fjz-nxwj-ums",
-                "videoLink": ""
+                "videoLink": "",
+                "isGlowActive": false
             },
             {
                 "dayNum": 9,
@@ -849,7 +862,8 @@
                 "courseUrl": "",
                 "description": "Hands-on skill building programs, industry certifications, and corporate internship opportunities.",
                 "meetLink": "https://meet.google.com/sxc-hgfy-dwi",
-                "videoLink": ""
+                "videoLink": "",
+                "isGlowActive": false
             },
             {
                 "dayNum": 10,
@@ -863,7 +877,8 @@
                 "courseUrl": "",
                 "description": "Campus recruitment drives, career readiness, interview preparation, and placement statistics.",
                 "meetLink": "https://meet.google.com/jic-muyz-opw",
-                "videoLink": ""
+                "videoLink": "",
+                "isGlowActive": false
             },
             {
                 "dayNum": 11,
@@ -877,7 +892,8 @@
                 "courseUrl": "",
                 "description": "Guidance on VTU examinations, grading systems, attendance requirements, and valedictory closing.",
                 "meetLink": "https://meet.google.com/eha-pwgk-gzx",
-                "videoLink": ""
+                "videoLink": "",
+                "isGlowActive": false
             }
         ];
 
@@ -1178,7 +1194,6 @@
         let activeScheduleFilter = 'all';
         let currentActivityDay = 1;
 
-        // Active Glowing Status forced for Day 3 (Prof. Yogesh Chavadi)
         const TODAY_DATE = 'Aug 06, 2026';
         let manualGlowIndex = 3;
 
@@ -1310,7 +1325,7 @@
             }
 
             filtered.forEach((session, index) => {
-                const isTodayGlow = (manualGlowIndex === null && session.dateStr.includes(TODAY_DATE)) || (manualGlowIndex === index);
+                const isTodayGlow = session.isGlowActive === true || (manualGlowIndex === index);
 
                 const card = document.createElement('div');
                 card.className = isTodayGlow 
@@ -1339,7 +1354,6 @@
                     ? `<img src="${session.photoUrl}" alt="${session.speaker}" class="w-12 h-14 rounded-xl object-cover object-center border-2 border-jce-blue/30 shadow-md flex-shrink-0 bg-slate-100" style="image-rendering: -webkit-optimize-contrast;">`
                     : `<div class="w-10 h-10 rounded-xl bg-slate-100 border border-slate-200 text-slate-700 flex items-center justify-center font-bold text-xs flex-shrink-0 shadow-sm"><i class="fa-solid fa-user-tie text-base text-jce-blue"></i></div>`;
 
-                // Build Google Meet link buttons (Primary + Optional Secondary with Instruction Box)
                 let meetButtonsHtml = `
                     <a href="${session.meetLink}" target="_blank" class="px-4 py-2 bg-jce-blue hover:bg-blue-800 text-white font-bold rounded-xl text-xs transition flex items-center gap-2 shadow-sm pulse-subtle">
                         <i class="fa-solid fa-video"></i> Join Live Google Meet
@@ -2084,7 +2098,7 @@
             const daysOfWeek = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
             sessions.forEach((s, idx) => {
-                const isGlowing = (manualGlowIndex === null && s.dateStr.includes(TODAY_DATE)) || (manualGlowIndex === idx);
+                const isGlowing = s.isGlowActive === true || (manualGlowIndex === idx);
 
                 const item = document.createElement('div');
                 item.className = isGlowing 
@@ -2097,12 +2111,20 @@
                             <span>Day ${s.dayNum} Session Card</span>
                             ${isGlowing ? '<span class="text-[10px] bg-amber-500 text-slate-900 px-2 py-0.5 rounded-full font-extrabold"><i class="fa-solid fa-sun"></i> ACTIVE GLOW</span>' : ''}
                         </div>
-                        <div class="flex items-center gap-2">
-                            <button onclick="setTodayGlowOverride(${idx})" class="px-2.5 py-1 ${isGlowing ? 'bg-amber-600 text-white' : 'bg-amber-100 text-amber-900 hover:bg-amber-200'} rounded-lg text-[11px] font-bold transition flex items-center gap-1 shadow-sm">
-                                <i class="fa-solid fa-sun"></i> ${isGlowing ? 'Glowing Active' : "Set as Today's Glow"}
-                            </button>
+                        
+                        <!-- REAL-TIME GLOW TOGGLE COMPONENT -->
+                        <div class="flex items-center gap-3">
+                            <label class="inline-flex items-center cursor-pointer gap-2 bg-white px-3 py-1 rounded-xl border border-slate-200 shadow-sm">
+                                <span class="text-[11px] font-bold text-slate-700">Glowing State:</span>
+                                <div class="relative">
+                                    <input type="checkbox" ${isGlowing ? 'checked' : ''} onchange="toggleSessionGlow(${idx}, this.checked)" class="sr-only peer">
+                                    <div class="w-9 h-5 bg-slate-300 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-amber-500"></div>
+                                </div>
+                                <span class="text-[11px] font-extrabold ${isGlowing ? 'text-amber-600' : 'text-slate-400'}">${isGlowing ? 'ON' : 'OFF'}</span>
+                            </label>
+
                             <button onclick="splitSession(${idx})" class="px-2.5 py-1 bg-amber-500 hover:bg-amber-600 text-slate-900 rounded-lg text-[11px] font-bold transition flex items-center gap-1 shadow-sm">
-                                <i class="fa-solid fa-scissors"></i> Split (45m + 45m)
+                                <i class="fa-solid fa-scissors"></i> Split
                             </button>
                             <button onclick="deleteSession(${idx})" class="px-2.5 py-1 bg-red-600 hover:bg-red-700 text-white rounded-lg text-[11px] font-bold transition flex items-center gap-1 shadow-sm">
                                 <i class="fa-solid fa-trash"></i> Delete
@@ -2183,6 +2205,33 @@
             });
         }
 
+        function toggleSessionGlow(index, isChecked) {
+            if (!sessions[index]) return;
+
+            sessions.forEach((s, i) => {
+                if (i !== index) s.isGlowActive = false;
+            });
+
+            sessions[index].isGlowActive = isChecked;
+            manualGlowIndex = isChecked ? index : null;
+
+            sessionsRef.set(sessions)
+                .then(() => {
+                    renderSchedule();
+                    renderAdminSessionsEditor();
+                    showNotification(
+                        isChecked 
+                            ? `Day ${sessions[index].dayNum} "Glowing Active" turned ON and synced live!` 
+                            : `Day ${sessions[index].dayNum} "Glowing Active" turned OFF!`,
+                        isChecked ? 'success' : 'info'
+                    );
+                })
+                .catch((err) => {
+                    console.error("Firebase sync error:", err);
+                    showNotification("Failed to update active status on database.", "error");
+                });
+        }
+
         function handleAdminPhotoUpload(event, index) {
             const file = event.target.files[0];
             if (!file) return;
@@ -2196,13 +2245,6 @@
                 showNotification(`Passport photo converted to Base64 URI and embedded for Day ${sessions[index].dayNum}!`, 'success');
             };
             reader.readAsDataURL(file);
-        }
-
-        function setTodayGlowOverride(index) {
-            manualGlowIndex = index;
-            renderAdminSessionsEditor();
-            renderSchedule();
-            showNotification(`Session Day ${sessions[index].dayNum} set as TODAY'S LIVE GLOW session card!`, 'success');
         }
 
         function updateSessionField(index, field, value) {
@@ -2220,7 +2262,8 @@
                 dayNum: orig.dayNum,
                 timeSlot: '10:00 AM - 10:45 AM (Part 1)',
                 topic: `${orig.topic} — Part I`,
-                description: `${orig.description} (First 45-min segment)`
+                description: `${orig.description} (First 45-min segment)`,
+                isGlowActive: orig.isGlowActive || false
             };
 
             const part2 = {
@@ -2228,7 +2271,8 @@
                 dayNum: orig.dayNum,
                 timeSlot: '10:45 AM - 11:30 AM (Part 2)',
                 topic: `${orig.topic} — Part II`,
-                description: `${orig.description} (Second 45-min segment)`
+                description: `${orig.description} (Second 45-min segment)`,
+                isGlowActive: false
             };
 
             sessions.splice(index, 1, part1, part2);
@@ -2260,7 +2304,8 @@
                 courseUrl: '',
                 description: 'Additional interactive session added by coordinator.',
                 meetLink: 'https://meet.google.com/abc-defg-hij',
-                videoLink: ''
+                videoLink: '',
+                isGlowActive: false
             });
             renderAdminSessionsEditor();
             renderSchedule();
